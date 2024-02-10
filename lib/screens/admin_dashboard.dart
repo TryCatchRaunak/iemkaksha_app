@@ -9,13 +9,6 @@ class AdminDashBoard extends StatelessWidget {
       body: Stack(
         children: [
           // Background image
-          Image.asset(
-            'assets/admin_dashboard_background.png',
-            fit: BoxFit.contain,
-            width: double.infinity,
-            height: double.infinity,
-            alignment: Alignment.center,
-          ),
 
           // Your UI on top of the background
         ],
