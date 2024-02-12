@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AdminDashBoard extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
@@ -8,29 +9,55 @@ class AdminDashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(
-          255, 255, 255, 255), // Set background color to white
+      backgroundColor: Colors.white,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 40.0, left: 20.0),
+            child: Text(
+              'Dashboard',
+              style: GoogleFonts.poppins(
+                  fontSize: 36.0,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(255, 2, 80, 145).withOpacity(1.0),
+                  shadows: [
+                    Shadow(
+                      color:
+                          const Color.fromARGB(153, 0, 0, 0).withOpacity(0.3),
+                      offset: const Offset(2, 2),
+                      blurRadius: 2,
+                    ),
+                  ]),
+            ),
+          ),
+          Expanded(
+            child: Container(
+                // Your main body content goes here
+                ),
+          ),
+        ],
+      ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 20.0),
         child: SizedBox(
-          width: 300, // Reduce size horizontally
-          height: 70.0, // Adjusted height
+          width: 300,
+          height: 70.0,
           child: DecoratedBox(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30.0), // Add rounded corners
-              color: const Color(0xFF4C9ACC), // Color #4c9acc
+              borderRadius: BorderRadius.circular(30.0),
+              color: const Color(0xFF4C9ACC),
               boxShadow: [
                 BoxShadow(
                   color: const Color.fromARGB(24, 0, 0, 0).withOpacity(0.4),
                   spreadRadius: 1,
                   blurRadius: 5,
-                  offset: const Offset(2, 2), // Shadow offset
+                  offset: const Offset(2, 2),
                 ),
               ],
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0), // Add padding to widen the bar
+              padding: const EdgeInsets.symmetric(horizontal: 45.0),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -49,9 +76,7 @@ class AdminDashBoard extends StatelessWidget {
                       ),
                       FaIcon(
                         // ignore: deprecated_member_use
-                        FontAwesomeIcons
-                            // ignore: deprecated_member_use
-                            .userAlt, // This will give you the user icon
+                        FontAwesomeIcons.userAlt,
                         color: Colors.white,
                       ),
                       FaIcon(
@@ -61,8 +86,7 @@ class AdminDashBoard extends StatelessWidget {
                     ],
                   ),
                   Transform.translate(
-                    offset: const Offset(
-                        0, -30), // Shift the circle shape upwards by 20px
+                    offset: const Offset(0, -30),
                     child: Container(
                       width: 60,
                       height: 60,
@@ -75,7 +99,7 @@ class AdminDashBoard extends StatelessWidget {
                                 .withOpacity(0.4),
                             spreadRadius: 1,
                             blurRadius: 4,
-                            offset: const Offset(0, 2), // Shadow offset
+                            offset: const Offset(0, 2),
                           ),
                         ],
                       ),
