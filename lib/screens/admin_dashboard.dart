@@ -14,21 +14,49 @@ class AdminDashBoard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 40.0, left: 20.0),
-            child: Text(
-              'Dashboard',
-              style: GoogleFonts.poppins(
-                  fontSize: 36.0,
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 2, 80, 145).withOpacity(1.0),
-                  shadows: [
-                    Shadow(
-                      color:
-                          const Color.fromARGB(153, 0, 0, 0).withOpacity(0.3),
-                      offset: const Offset(2, 2),
-                      blurRadius: 2,
+            padding: const EdgeInsets.only(top: 40.0, left: 20.0, right: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Dashboard',
+                  style: GoogleFonts.poppins(
+                      fontSize: 36.0,
+                      fontWeight: FontWeight.bold,
+                      color: const Color.fromARGB(255, 2, 80, 145)
+                          .withOpacity(1.0),
+                      shadows: [
+                        Shadow(
+                          color: const Color.fromARGB(153, 0, 0, 0)
+                              .withOpacity(0.3),
+                          offset: const Offset(2, 2),
+                          blurRadius: 2,
+                        ),
+                      ]),
+                ),
+                Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey, // Change this color as needed
+                    image: const DecorationImage(
+                      image: AssetImage(
+                          'assets/1.jpg'), // Replace this with your image path
+                      fit: BoxFit.cover,
                     ),
-                  ]),
+                    boxShadow: [
+                      BoxShadow(
+                        color:
+                            const Color.fromARGB(64, 0, 0, 0).withOpacity(0.4),
+                        spreadRadius: 1,
+                        blurRadius: 4,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
           Expanded(
