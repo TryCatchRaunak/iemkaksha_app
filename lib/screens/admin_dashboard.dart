@@ -38,26 +38,63 @@ class AdminDashBoard extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      width: 60,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.grey, // Change this color as needed
-                        image: const DecorationImage(
-                          image: AssetImage(
-                              'assets/1.jpg'), // Replace this with your image path
-                          fit: BoxFit.cover,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color.fromARGB(64, 0, 0, 0)
-                                .withOpacity(0.4),
-                            spreadRadius: 1,
-                            blurRadius: 4,
-                            offset: const Offset(0, 2),
+                    PopupMenuButton(
+                      offset: const Offset(
+                          2010, 70), //shifting the popmenubutton downwards
+                      itemBuilder: (context) => [
+                        const PopupMenuItem(
+                          value: 'manage_profile',
+                          child: Text(
+                            'Manage Profile',
+                            style: TextStyle(
+                              color: Colors.blueAccent,
+                              fontFamily: 'Roboto', //font changed
+                            ),
                           ),
-                        ],
+                        ),
+                        const PopupMenuItem(
+                          value: 'logout',
+                          child: Text(
+                            'Logout',
+                            style: TextStyle(
+                              color: Colors.blueAccent,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                        ),
+                      ],
+                      color: const Color.fromARGB(255, 225, 237, 248),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      onSelected: (value) {
+                        if (value == 'manage_profile') {
+                          // Handle Manage Profile action
+                        } else if (value == 'logout') {
+                          // Handle Logout action
+                        }
+                      },
+                      icon: Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.grey, // Change this color as needed
+                          image: const DecorationImage(
+                            image: AssetImage(
+                                'assets/1.jpg'), // Replace this with your image path
+                            fit: BoxFit.cover,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color.fromARGB(64, 0, 0, 0)
+                                  .withOpacity(0.4),
+                              spreadRadius: 1,
+                              blurRadius: 4,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
