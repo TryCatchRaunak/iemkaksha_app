@@ -40,7 +40,7 @@ class AdminDashBoard extends StatelessWidget {
                     ),
                     PopupMenuButton(
                       offset: const Offset(
-                          2010, 70), //shifting the popmenubutton downwards
+                          2010, 70), //shifting the popup button downwards
                       itemBuilder: (context) => [
                         const PopupMenuItem(
                           value: 'manage_profile',
@@ -121,9 +121,20 @@ class AdminDashBoard extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Container(
-                // Your main body content goes here
-                ),
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ListView(
+                children: const [
+                  CardWidget(
+                    title: 'UPCOMING EVENTS',
+                  ),
+                  SizedBox(height: 5.0),
+                  CardWidget(
+                    title: 'TEACHERS',
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
@@ -201,6 +212,75 @@ class AdminDashBoard extends StatelessWidget {
                 ],
               ),
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CardWidget extends StatelessWidget {
+  final String title;
+
+  const CardWidget({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          gradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromARGB(171, 111, 199, 240),
+              Color.fromARGB(255, 190, 223, 250),
+            ],
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 50),
+              if (title == 'UPCOMING EVENTS')
+                Align(
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                    width: 200,
+                    height: 200,
+                    child: Image.asset(
+                      'assets/no_data.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              if (title == 'TEACHERS')
+                Align(
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                    width: 200,
+                    height: 200,
+                    child: Image.asset(
+                      'assets/no_data.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+            ],
           ),
         ),
       ),
