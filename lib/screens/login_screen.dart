@@ -46,6 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
           // Navigate to AdminDashboard screen on successful login
           // ignore: use_build_context_synchronously
           Navigator.pushReplacement(
+            // ignore: use_build_context_synchronously
             context,
             MaterialPageRoute(builder: (context) => const AdminDashBoard()),
           );
@@ -56,6 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
           // Navigate to AdminDashboard screen on successful login
           // ignore: use_build_context_synchronously
           Navigator.pushReplacement(
+            // ignore: use_build_context_synchronously
             context,
             MaterialPageRoute(builder: (context) => const AdminDashBoard()),
           );
@@ -67,6 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // Navigate to AdminDashboard screen on successful login
         // ignore: use_build_context_synchronously
         Navigator.pushReplacement(
+          // ignore: use_build_context_synchronously
           context,
           MaterialPageRoute(builder: (context) => const AdminDashBoard()),
         );
